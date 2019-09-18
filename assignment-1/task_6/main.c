@@ -19,7 +19,7 @@ int main() {
     /* otetaan jäljelle jääneet sekunnit talteen */
     short seconds = input_seconds % 60;
 
-    /* taivutetaan seliteteksit oikein */
+    /* taivutetaan selitetekstit oikein */
     char hours_text [] = "tuntia";
     char minutes_text [] = "minuuttia";
     char seconds_text [] = "sekuntia";
