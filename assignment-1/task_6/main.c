@@ -13,12 +13,13 @@ int main() {
     /* muutetaan sekunnit täysiksi tunneiksi */
     short hours = (short) (input_seconds / 3600);
 
-     /* muutetaan jäljelle jääneet sekunnit täysiksi minuuteiksi */
+    /* muutetaan jäljelle jääneet sekunnit täysiksi minuuteiksi */
     short minutes = (short) ((input_seconds % 3600) / 60);
 
     /* otetaan jäljelle jääneet sekunnit talteen */
     short seconds = input_seconds % 60;
 
+    /* taivutetaan seliteteksit oikein */
     char hours_text [] = "tuntia";
     char minutes_text [] = "minuuttia";
     char seconds_text [] = "sekuntia";

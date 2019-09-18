@@ -19,7 +19,7 @@ int main() {
 
     short time_h = (short) time;
     short time_min = time * 60;
-    short time_jakojaannos = time_min % 60;
-    printf(" eli %d tuntia ja %d minuuttia.", time_h, time_jakojaannos);
+    short time_modulo = time_min % 60;
+    printf(" eli %d tuntia ja %d minuuttia.", time_h, time_modulo);
     return 0;
 }

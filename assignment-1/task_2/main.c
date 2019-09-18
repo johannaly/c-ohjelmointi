@@ -17,7 +17,7 @@ int main() {
     printf("Syötä sähkövirta ampeereina: \n");
     scanf("%f", &current);
 
-    resistance = voltage/current;
+    resistance = voltage / current;
     printf("Resistanssi on %f \n", resistance);
     return 0;
 }
