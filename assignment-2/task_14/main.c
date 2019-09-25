@@ -18,34 +18,43 @@ int main() {
     printf("Syötä sivun c pituus (cm): \n");
     scanf("%f", &side_c);
 
-    /* testataan ovatko kaikki sivut yhtä pitkiä */
-    if (side_a == side_b && side_a == side_c) {
-        printf("Kolmio on tasasivuinen.");
-    }
-
-    /* testataan onko kolmion kahden sivun välinen kulma suorakulma */
-    else if ((powf(side_a,2) + powf(side_b,2) == powf(side_c,2)) ||
-             (powf(side_a,2) + powf(side_c,2) == powf(side_b,2)) ||
-             (powf(side_c,2) + powf(side_b,2) == powf(side_a,2))) {
-        printf("Kolmio on suorakulmainen.");
-    }
-
-    /* testataan ovatko kolmion kaksi sivua yhtä pitkät */
-    else if ((side_a == side_b) ||
-             (side_a == side_c) ||
-             (side_b == side_c)) {
-        printf("Kolmio on tasakylkinen.");
-    }
-
-    /* jos kolmio ei ole säännönmukainen */
-    else {
-        printf("Kolmio ei ole säännönmukainen.");
-    }
-
-    /* lasketaan kolmion pinta-ala käyttämällä apumuuttujia s1 ja s2 */
+    /* lasketaan apumuuttujat s1 ja s2 Heronin kaavaa varten */
     float s1 = powf(side_a, 2) + powf(side_b, 2) + powf(side_c, 2);
     float s2 = powf(side_a, 4) + powf(side_b, 4) + powf(side_c, 4);
-    float area = 0.25 * sqrtf(powf(s1,2) - (2 * s2));
-    printf(" Kolmion pinta-ala on %.2f cm^2.", area);
+
+    /* tarkistetaan onko kyseessä kolmio */
+    if ((2 * s2) > powf(s1,2)) {
+        printf("Kyseessä ei ole kolmio.");
+    }
+
+    else {
+        /* testataan ovatko kaikki sivut yhtä pitkiä */
+        if (side_a == side_b && side_a == side_c) {
+            printf("Kolmio on tasasivuinen.");
+        }
+
+        /* testataan onko kolmion kahden sivun välinen kulma suorakulma */
+        else if ((powf(side_a,2) + powf(side_b,2) == powf(side_c,2)) ||
+                 (powf(side_a,2) + powf(side_c,2) == powf(side_b,2)) ||
+                 (powf(side_c,2) + powf(side_b,2) == powf(side_a,2))) {
+            printf("Kolmio on suorakulmainen.");
+        }
+
+        /* testataan ovatko kolmion kaksi sivua yhtä pitkät */
+        else if ((side_a == side_b) ||
+                 (side_a == side_c) ||
+                 (side_b == side_c)) {
+            printf("Kolmio on tasakylkinen.");
+        }
+
+        /* jos kolmio ei ole säännönmukainen */
+        else {
+            printf("Kolmio ei ole säännönmukainen.");
+        }
+
+        /* lasketaan kolmion pinta-ala Heronin kaavan mukaan käyttämällä apumuuttujia s1 ja s2 */
+        float area = 0.25 * sqrtf(powf(s1,2) - (2 * s2));
+        printf(" Kolmion pinta-ala on %.2f cm^2.", area);
+    }
     return 0;
 }
