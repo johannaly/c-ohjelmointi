@@ -25,7 +25,7 @@ float countStandardDeviation(float table[], int sizeOfTable) {
     float average = sum / sizeOfTable;
     float sd = 0;
     for (int i = 0; i < sizeOfTable; i++) {
-        sd = pow (table[i] - average, 2);
+        sd = sd + pow ((table[i] - average), 2);
     }
     return sqrt(sd / sizeOfTable);
 }

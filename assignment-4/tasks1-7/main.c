@@ -113,21 +113,19 @@ int factorial(int f) {
 
 /* Returns the biggest of 2 integers. */
 int big(int a, int b) {
-    int biggest;
-    if (a < b) {
-        biggest = b;
-    } else biggest = a;
-    return biggest;
+    if (a > b) {
+        return a;
+    } else {
+        return b;
+    }
 }
 
 /* Returns the biggest of 3 integers. */
 int large (int t, int l, int k) {
-    int largest = t;
     if (l > t && l > k) {
-        largest = l;
+        return l;
     }
     else if (k > t && k > l) {
-        largest = k;
+        return k;
     }
-    return largest;
-    }
+}
